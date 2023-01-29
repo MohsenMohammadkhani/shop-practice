@@ -1,0 +1,18 @@
+@font-face {
+  font-family: vazir;
+  src: url("../fonts/vazir/vazir.eot");
+  src: url("../fonts/vazir/vazir.eot") format("embedded-opentype"),
+    url("../fonts/vazir/vazir.woff2") format("woff2"),
+    url("../fonts/vazir/vazir.woff") format("woff"),
+    url("../fonts/vazir/vazir.ttf") format("truetype");
+  font-weight: normal;
+}
+
+body {
+  font-family: "vazir", sans-serif !important;
+  background-color: #fff;
+}
+
+.hover {
+  cursor: pointer;
+}

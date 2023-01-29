@@ -1,0 +1,29 @@
+describe("test Login component", () => {
+  it("test Login component", () => {
+    const email = "mohsenmohammadkhanigla@gmail.com";
+    const password = "asdASD123";
+    cy.intercept(
+      "POST",
+      "http://localhost:8000/api/v1/auth/login-with-credentials",
+      {
+        statusCode: 200,
+        body: {
+          email: email,
+          password: password,
+        },
+        response: {
+          success: true,
+          message: "ورود شما با موفقیت انجام شد.",
+        },
+      }
+    );
+
+    cy.visit("http://localhost:3000/auth/login");
+    cy.get("#email").type(email);
+    cy.get("#password").type(password);
+    cy.get(".btn.btn-primary")
+      .click()
+      .get("#toast .Toastify__toast-body div")
+      .should("have.text", "ورود شما با موفقیت انجام شد.");
+  });
+});
