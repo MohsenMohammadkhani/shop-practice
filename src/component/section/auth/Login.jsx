@@ -6,6 +6,7 @@ import HeaderRequestHelper from "../../../helpers/HeaderRequest";
 import HttpService from "../../../services/Http";
 import helpersSpinner from "../../../helpers/spinner";
 import authMessage from "../../../messages/auth";
+import SignInWithGoogle from "./SignInWithGoogle";
 
 function Login() {
   const [message, setMessage] = useState();
@@ -135,13 +136,9 @@ function Login() {
           </form>
 
           <hr />
-
-          <div className="social-auth-links text-center mb-3">
-            <a href="#" className="btn btn-block btn-danger">
-              ورود با گوکل
-            </a>
-          </div>
-
+          <SignInWithGoogle
+            redirectUri={`${process.env.REACT_APP_DOMAIN_API}/api/v1/auth/register-with-google`}
+          />
           <p className="mb-1">
             <a href="forgot-password.html">رمز عبور خود را فراموش کرده ام.</a>
           </p>

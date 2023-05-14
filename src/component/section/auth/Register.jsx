@@ -6,6 +6,7 @@ import HeaderRequestHelper from "../../../helpers/HeaderRequest";
 import HttpService from "../../../services/Http";
 import helpersSpinner from "../../../helpers/spinner";
 import authMessage from "../../../messages/auth";
+import SignInWithGoogle from "./SignInWithGoogle";
 
 function Register() {
   const [message, setMessage] = useState();
@@ -187,11 +188,9 @@ function Register() {
           </form>
 
           <hr />
-          <div className="social-auth-links text-center">
-            {/* <a href="#" className="btn btn-block btn-danger">
-              ثبت نام با گوگل
-            </a> */}
-          </div>
+          <SignInWithGoogle
+            redirectUri={`${process.env.REACT_APP_DOMAIN_API}/api/v1/auth/register-with-google`}
+          />
 
           <Link to={"/auth/login"} className="text-center">
             ورود
