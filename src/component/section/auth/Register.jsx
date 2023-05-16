@@ -190,6 +190,7 @@ function Register() {
           <hr />
           <SignInWithGoogle
             redirectUri={`${process.env.REACT_APP_DOMAIN_API}/api/v1/auth/register-with-google`}
+            labelButton="ثبت نام با گوگل"
           />
 
           <Link to={"/auth/login"} className="text-center">

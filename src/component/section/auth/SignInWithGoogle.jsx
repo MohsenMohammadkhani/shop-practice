@@ -1,7 +1,7 @@
 import React from "react";
 import helpersNumbers from "../../../helpers/numbers";
 
-export default function SignInWithGoogle({ redirectUri }) {
+export default function SignInWithGoogle({ redirectUri, labelButton }) {
   const singInWithGoogle = async () => {
     const queryString = getQueryStringForRequest();
     window.location.replace(
@@ -30,7 +30,7 @@ export default function SignInWithGoogle({ redirectUri }) {
       className="social-auth-links text-center mb-3"
     >
       <span href="#" className="btn btn-block btn-danger">
-      ثبت نام با گوکل
+        {labelButton}
       </span>
     </div>
   );

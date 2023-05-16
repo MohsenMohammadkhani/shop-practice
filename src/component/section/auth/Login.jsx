@@ -137,7 +137,8 @@ function Login() {
 
           <hr />
           <SignInWithGoogle
-            redirectUri={`${process.env.REACT_APP_DOMAIN_API}/api/v1/auth/register-with-google`}
+            redirectUri={`${process.env.REACT_APP_DOMAIN_API}/api/v1/auth/login-with-google`}
+            labelButton="ورود با گوگل"
           />
           <p className="mb-1">
             <a href="forgot-password.html">رمز عبور خود را فراموش کرده ام.</a>
